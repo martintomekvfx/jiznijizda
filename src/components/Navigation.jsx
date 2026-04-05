@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const NAV_ITEMS = [
   { label: 'Manifesto', href: '#manifesto' },
@@ -35,6 +36,9 @@ export default function Navigation() {
               {item.label}
             </a>
           ))}
+          <Link to="/prezentace" className="nav-link" style={{ border: '2px solid var(--white)', padding: '0.15rem 0.75rem' }}>
+            Prezentace
+          </Link>
         </div>
         <button
           className="nav-hamburger"
@@ -63,6 +67,13 @@ export default function Navigation() {
             {item.label}
           </a>
         ))}
+        <Link
+          to="/prezentace"
+          className="nav-mobile-link glitch"
+          onClick={() => setMobileOpen(false)}
+        >
+          Prezentace
+        </Link>
       </div>
     </>
   );

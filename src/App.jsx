@@ -1,23 +1,14 @@
-import Navigation from './components/Navigation';
-import Hero from './components/Hero';
-import Manifesto from './components/Manifesto';
-import CrewGrid from './components/CrewGrid';
-import CrewMap from './components/Map';
-import Gallery from './components/Gallery';
-import Footer from './components/Footer';
+import { HashRouter, Routes, Route } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import PresentationPage from './pages/PresentationPage';
 
 export default function App() {
   return (
-    <>
-      <Navigation />
-      <main>
-        <Hero />
-        <Manifesto />
-        <CrewGrid />
-        <CrewMap />
-        <Gallery />
-      </main>
-      <Footer />
-    </>
+    <HashRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/prezentace" element={<PresentationPage />} />
+      </Routes>
+    </HashRouter>
   );
 }
